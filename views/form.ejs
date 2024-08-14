@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2>New Message</h2>
+    <% 
+    // The submit button should send a POST request to the URL specified by the action attribute (/new)
+    // You need to add this as a route in your Express app
+    %>
+    <%- include('navbar', {links: links}) %>
+    <form method="POST" action="/new">
+      <div>
+        <label for="messageUser">user name:</label>
+        <input name="messageUser" type="text" id="messageUser">
+      </div>
+      <div>
+        <label for="messageText">message:</label>
+        <input name="messageText" type="text" id="messageText">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <%- include('navbar', {links: links}) %>
+    <ul>
+      <% messages.forEach((message) => {%>
+        <li>
+          <div>
+            <p>User: <%= message.user %></p>
+            <p>Text: <%= message.text %></p>
+            <p>Date Sent: <%= message.added %></p>
+            <form method="GET" action="/message/<%= message.id %>">
+              <button type="submit">Open</button>
+            </form>
+          </div>
+        </li>
+        <% }) %>
+    </ul>
+  </body>
+</html>
